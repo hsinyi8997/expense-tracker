@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "name": "看電影",
+      "date": "2022-02-02",
+      "amount": 300,
+      "categoryId": "休閒娛樂",
+      "userId": "user1@example.com"
+    },
+    {
+      "name": "吃生日大餐",
+      "date": "2021-07-12",
+      "amount": 1500,
+      "categoryId": "餐飲食品",
+      "userId": "user1@example.com"
+    },
+    {
+      "name": "高雄出差",
+      "date": "2022-10-09",
+      "amount": 780,
+      "categoryId": "交通出行",
+      "userId": "user1@example.com"
+    },
+    {
+      "name": "盥洗用具",
+      "date": "2009-12-25",
+      "amount": 150,
+      "categoryId": "家居物業",
+      "userId": "user2@example.com"
+    },
+    {
+      "name": "狗狗團體捐贈",
+      "date": "2022-05-19",
+      "amount": 1500,
+      "categoryId": "其他",
+      "userId": "user2@example.com"
+    },
+    {
+      "name": "買除濕機",
+      "date": "2011-03-27",
+      "amount": 5000,
+      "categoryId": "家居物業",
+      "userId": "user2@example.com"
+    }
+  ]
+}

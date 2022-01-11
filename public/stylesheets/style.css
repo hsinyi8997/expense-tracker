@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+.category-icon {
+  font-size: 1.7rem;
+  color: gray;
+}
+
+.container {
+  width: 70%;
+}
+
+/* navbar */
+.navbar-wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* index page */
+.filter-wrapper {
+  width: 95%;
+  margin: 12px auto;
+}
+
+.list-wrapper {
+  width: 100%;
+}
+
+#index-page .total-amount {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e76f51;
+}
+
+#index-page .filter-item {
+  width: 150px;
+  height: 35px;
+  margin-left: 1rem;
+}
+
+#index-page form {
+  max-width: calc(100% - 160px);
+}
+
+#index-page ul>.list-group-item:nth-of-type(odd)  {
+  background: #f9fafa;
+}
+
+#index-page ul>.list-group-item {
+  border-radius: .8rem;
+}
+
+#index-page .name, .amount, .date {
+  color: gray;
+}
+#index-page .list-group-item {
+  border: none;
+}
+
+#index-page .amount {
+  padding-right: 12px;
+}
+
+#index-page .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#index-page .right-item-icon {
+  color: #ddd;
+}
+
+#index-page li:hover .right-item-icon {
+  color: gray;
+}
+
+.record-add-btn {
+  width: 200px;
+  margin: 0 auto;
+}
+

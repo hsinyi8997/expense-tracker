@@ -1,5 +1,4 @@
 const express = require('express')
-const { enabled } = require('express/lib/application')
 const moment = require('moment')
 const router = express.Router()
 const Category = require('../../models/category')

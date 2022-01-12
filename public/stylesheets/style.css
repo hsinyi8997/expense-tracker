@@ -88,3 +88,25 @@
   margin: 0 auto;
 }
 
+/* new-page */
+#new-page {
+  max-width: 400px;
+}
+
+.required-mark {
+  color: red;
+  margin: 0 2px;
+}
+
+#new-page .btn-submit {
+  width: 100%;
+}
+
+#new-page {
+  color: gray;
+}
+
+#new-page h4 {
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+}

@@ -44,7 +44,11 @@
           <div class="amount">{{this.amount}}</div>
           <div>
             <a href="/record/edit/{{this._id}}" class="btn right-item-icon"><i class="fas fa-edit"></i></a>
-            <form action="/record/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
+            <form action="/record/{{this._id}}?_method=DELETE" method="POST" style="display: inline;" onsubmit="return confirm(`
+            確定要刪除這筆支出嗎？
+            名稱: {{ this.name }}
+            日期: {{ this.date }}
+            金額: {{ this.amount }}`)">
               <button class="btn right-item-icon"><i class="fas fa-trash-alt"></i></button>
             </form>
           </div>

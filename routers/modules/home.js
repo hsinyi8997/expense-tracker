@@ -7,10 +7,10 @@ const { splitToObject } = require('../../utils/utils')
 
 router.get('/', async (req, res) => {
   const sorts = []
-  const userId = '61dbe5d96efa1a4d450ae7b3'
+  const userId = req.user._id
   const { category, month, sort } = req.query
   let sortRule = sort ? splitToObject(sort) : { date: 1 }
-  const condition = {userId}
+  const condition = { userId }
 
   //處理category資料
   Category.find()

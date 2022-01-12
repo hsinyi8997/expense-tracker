@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
@@ -6,13 +7,26 @@ const router = require('./routers')
 const app = express()
 const PORT = 3000
 
+const usePassport = require('./config/passport')
 require('./config/mongoose')
 
 app.engine('hbs', exphbs.engine({ defaultLayout:'main', extname:'.hbs' }))
 app.set('view engine', 'hbs')
+app.use(session({
+  secret: '5k4g4session',
+  resave: false,
+  saveUninitialized: true
+}))
+
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
+usePassport(app)
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
 
 app.use(router)
 

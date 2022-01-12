@@ -1,0 +1,23 @@
+<div class="container" id="login-page">
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h4 class="text-center mt-3">登入</h4>
+        <form action="/user/login" method="POST">
+          <div class="form-group">
+            <label for="email">電子信箱</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="請輸入Email">
+          </div>
+          <div class="form-group">
+            <label for="password">密碼</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="請輸入密碼">
+          </div>
+          <button type="submit" class="btn btn-dark btn-block">登入</button>
+        </form>
+        <p class="lead mt-4">
+          還沒有帳號嗎？ <a href="/user/register">馬上註冊</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

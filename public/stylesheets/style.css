@@ -1,10 +1,15 @@
 * {
   box-sizing: border-box;
+  color: gray
+}
+
+h4 {
+  font-weight: bold;
+  color: rgb(92, 92, 92);
 }
 
 .category-icon {
   font-size: 1.7rem;
-  color: gray;
 }
 
 .container {
@@ -59,9 +64,6 @@
   width: 30px;
 }
 
-#index-page .name, .amount, .date {
-  color: gray;
-}
 #index-page .list-group-item {
   border: none;
 }
@@ -100,13 +102,4 @@
 
 #new-page .btn-submit {
   width: 100%;
-}
-
-#new-page {
-  color: gray;
-}
-
-#new-page h4 {
-  font-weight: bold;
-  color: rgb(92, 92, 92);
 }

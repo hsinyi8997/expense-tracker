@@ -1,49 +1,57 @@
 <div class="container" id="index-page">
   {{!-- filter --}}
   <div class="filter-wrapper d-flex justify-content-between align-items-center">
-    <div class="total-amount">總金額：1500</div>
-      <form action="/" method="GET">
-        <div class="row align-items-center justify-content-end">
-          {{!-- category filter --}}
-          <select name="category" id="category" class="filter-item form-control">
-            <option value="all"></option>
-            <option value="">須帶入</option>
-          </select>
-          {{!-- date filter --}}
-          <input type="month" name="month" id="month" class="filter-item form-control">
-          {{!-- sorting --}}
-          <select name="sort" id="sort" class="filter-item form-control">
-            <option value="">日期: 舊 - 新</option>
-            <option value="">日期: 新 - 舊</option>
-            <option value="">金額: 大 - 小</option>
-            <option value="">金額: 小 - 大</option>
-          </select>
-        </div>
-      </form> 
+    <div class="total-amount">總金額：{{totalAmount}}</div>
+    <form action="/" method="GET">
+      <div class="row align-items-center justify-content-end">
+        {{!-- category filter --}}
+        <select name="category" id="category" class="filter-item form-control">
+          <option value="all" selected>全部</option>
+          {{#each categoryData}}
+          <option value="{{this.name}}" {{this.selected}}>{{this.name}}</option>
+          {{/each}}
+        </select>
+        {{!-- date filter --}}
+        <input type="month" name="month" id="month" class="filter-item form-control" {{#if month}}value="{{month}}"
+          {{/if}}>
+        {{!-- sorting --}}
+        <select name="sort" id="sort" class="filter-item form-control">
+          <option value="date-asc" {{#if sorts.dateasc}}selected{{/if}}>日期: 舊 - 新</option>
+          <option value="date-desc" {{#if sorts.datedesc}}selected{{/if}}>日期: 新 - 舊</option>
+          <option value="amount-asc" {{#if sorts.amountasc}}selected{{/if}}>金額: 小 - 大</option>
+          <option value="amount-desc" {{#if sorts.amountdesc}}selected{{/if}}>金額: 大 - 小</option>
+        </select>
+        <button type="submit" class="btn btn-outline-secondary filter-btn">篩選</button>
+      </div>
+    </form>
   </div>
 
   {{!-- record list --}}
   <ul class="list-group mb-4">
+    {{#each record}}
     <li class="list-group-item">
       <div class="list-wrapper d-flex justify-content-between align-items-center">
         <div class="left-item d-flex align-items-center">
-          <i class="fas fa-grin-beam category-icon"></i>
+          <div class="left-item-icon mr-1">
+            <i class="{{this.categoryId.icon}} category-icon"></i>
+          </div>
           <div class="ml-3">
-            <div class="name">看電影</div>
-            <div class="date">2021-02-03</div>
+            <div class="name">{{this.name}}</div>
+            <div class="date">{{this.date}}</div>
           </div>
         </div>
         <div class="right-item d-flex align-items-center">
-          <div class="amount">500</div>
+          <div class="amount">{{this.amount}}</div>
           <div>
-            <a href="/record/edit" class="btn right-item-icon"><i class="fas fa-edit"></i></a>
-            <form action="/" method="POST" style="display: inline;">
+            <a href="/record/edit/{{this._id}}" class="btn right-item-icon"><i class="fas fa-edit"></i></a>
+            <form action="/record/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
               <button class="btn right-item-icon"><i class="fas fa-trash-alt"></i></button>
             </form>
           </div>
         </div>
       </div>
     </li>
+    {{/each}}
   </ul>
   {{!-- createBtn --}}
   <a href="/record/new" class="btn btn-dark record-add-btn" style="display: block;">新增支出</a>

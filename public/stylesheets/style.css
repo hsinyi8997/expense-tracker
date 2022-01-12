@@ -34,8 +34,12 @@
 }
 
 #index-page .filter-item {
-  width: 150px;
+  width: 170px;
   height: 35px;
+  margin-left: 1rem;
+}
+
+#index-page .filter-btn {
   margin-left: 1rem;
 }
 
@@ -49,6 +53,10 @@
 
 #index-page ul>.list-group-item {
   border-radius: .8rem;
+}
+
+#index-page .left-item-icon {
+  width: 30px;
 }
 
 #index-page .name, .amount, .date {

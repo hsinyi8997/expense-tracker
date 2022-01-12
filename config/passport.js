@@ -10,11 +10,11 @@ module.exports = app => {
     User.findOne({ email })
       .then(user => {
         if (!user) {
-          return done(null, false) //this email is not registered!
+          return done(null, false, req.flash('warning_msg', '此帳號尚未註冊過'))
         }
         return bcrypt.compare(password, user.password)
           .then(isMatch => {
-            if(!isMatch) return done(null, false) //password incorrect
+            if(!isMatch) return done(null, false, req.flash('warning_msg', '密碼有誤'))
             return done(null, user)
           })
       })

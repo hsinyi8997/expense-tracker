@@ -3,10 +3,10 @@ Expense tracker built by Express.js and Mongoose. Track your expense at ease.
 
 ## ScreenShots
 ### Login view
-![Login page screenshot](https://github.com/hsinyi8997/restaurant_list/blob/main/public/image/login_page.jpg)
+![Login page screenshot](https://github.com/hsinyi8997/expense-tracker/blob/main/public/image/login_page.jpg)
 
 ### User's index view
-![Index page screenshot](https://github.com/hsinyi8997/restaurant_list/blob/main/public/image/index_page.jpg)
+![Index page screenshot](https://github.com/hsinyi8997/expense-tracker/blob/main/public/image/index_page.jpg)
 
 ## Feature
 * User can create its own account
